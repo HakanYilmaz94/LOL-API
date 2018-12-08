@@ -12,12 +12,12 @@ import com.lol.rest.services.LeagueOfLegendsService;
 import com.lol.vo.ClientVO;
 
 @RestController
-@RequestMapping(path = "getSummonersInfo")
+@RequestMapping
 public class LeagueOfLegendsController {
 	@Autowired
 	LeagueOfLegendsService leagueOfLegendsService;
 
-	@PostMapping
+	@PostMapping(path = "getSummonersInfo")
 	public Response getSummonersInfo(@RequestBody ClientVO client) {
 		if(client.getUsername() == null) {
 			return new Response("Error","Başarısız Data");
