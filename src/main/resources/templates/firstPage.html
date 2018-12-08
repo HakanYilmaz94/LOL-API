@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 
 <html xmlns:th="http://www.thymeleaf.org">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/firstPage.js"></script>
 <head>
 <title>LOL API Test View</title>
 <meta charset="utf-8" />
@@ -12,14 +14,16 @@
 		<div>
 			<form style="margin: 20px 20px 20px 20px" id="formid">
 				<div class="form-group">
-					<label for="transactionId" style="margin-right: 5px">User Name:</label> <input type="text" class="form-control" id="transactionId"
-						placeholder="Enter UserName"
-						th:value="${username}" />
+					<label for="transactionId" style="margin-right: 5px">User
+						Name:</label> <input type="text" class="form-control" id="username"
+						placeholder="Enter Username" required/>
 				</div>
 				<button type="submit" class="btn btn-default"
 					style="margin-right: 5px">Check</button>
 			</form>
 		</div>
+	</div>
+	<div class="col-sm-7" id="postResultDiv">
 	</div>
 </body>
 </html>
