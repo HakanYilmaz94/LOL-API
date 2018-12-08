@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>LOL API Test View</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+	<div class="container">
+		<div>
+			<form style="margin: 20px 20px 20px 20px" id="formid">
+				<div class="form-group">
+					<label for="transactionId" style="margin-right: 5px">User Name:</label> <input type="text" class="form-control" id="transactionId"
+						placeholder="Enter UserName"
+						th:value="${username}" />
+				</div>
+				<button type="submit" class="btn btn-default"
+					style="margin-right: 5px">Check</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
