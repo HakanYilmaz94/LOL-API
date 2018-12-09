@@ -16,7 +16,7 @@ public class SpectatorService {
 	@Autowired
 	CommonService commonService;
 
-	public CurrentGameInfoDTO getCurrentGameInfo(Long summonerId) {
+	public CurrentGameInfoDTO getCurrentGameInfo(String summonerId) {
 
 		String request = LolConstants.SPECTATOR_CURRENTGAME_API + summonerId + "?api_key=" + apiKey;
 		CurrentGameInfoDTO currentGame = (CurrentGameInfoDTO) commonService.getResponse(request,CurrentGameInfoDTO.class);
