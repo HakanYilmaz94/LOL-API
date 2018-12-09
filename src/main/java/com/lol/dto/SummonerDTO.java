@@ -4,15 +4,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+/**
+ * @author HakanYilmaz
+ * SUMMONER-V4 Response
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class SummonerDTO {
-	private long id;
-	private long accountId;
+	private String id;
+	private String accountId;
 	private String name;
-	private long profileIconId;
-	//private Date revisionDate;
-	private int summonerLevel;
+	private String puuid;
+	private int profileIconId;
+	private long revisionDate;
+	private long summonerLevel;
 }
