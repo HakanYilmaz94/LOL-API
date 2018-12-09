@@ -22,7 +22,7 @@ public class LeagueOfLegendsController {
 		if(client.getUsername() == null) {
 			return new Response("Error","Başarısız Data");
 		}
-		SummonerDTO returnBody = leagueOfLegendsService.getSummoners(client.getUsername());
+		SummonerDTO returnBody = leagueOfLegendsService.getSummonerInfo(client.getUsername());
 		if(returnBody==null) {
 			return new Response("Error","Başarısız Data");
 		}

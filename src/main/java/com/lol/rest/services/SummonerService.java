@@ -16,7 +16,7 @@ public class SummonerService {
 	@Autowired
 	CommonService commonService;
 
-	public SummonerDTO getSummoners(String username) {
+	public SummonerDTO getSummonerInfo(String username) {
 
 		String request = LolConstants.SUMMONERS_API + username + "?api_key=" + apiKey;
 		SummonerDTO summoner = (SummonerDTO) commonService.getResponse(request, SummonerDTO.class);
