@@ -8,7 +8,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class SummonerDto {
+public class SummonerDTO {
 	private long id;
 	private long accountId;
 	private String name;

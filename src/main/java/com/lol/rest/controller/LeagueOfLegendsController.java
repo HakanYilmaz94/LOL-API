@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lol.dto.SummonerDto;
-import com.lol.rest.services.LeagueOfLegendsService;
+import com.lol.dto.SummonerDTO;
+import com.lol.rest.services.SummonerService;
 import com.lol.vo.ClientVO;
 
 @RestController
 @RequestMapping
 public class LeagueOfLegendsController {
 	@Autowired
-	LeagueOfLegendsService leagueOfLegendsService;
+	SummonerService leagueOfLegendsService;
 
 	@PostMapping(path = "getSummonersInfo")
 	public Response getSummonersInfo(@RequestBody ClientVO client) {
 		if(client.getUsername() == null) {
 			return new Response("Error","Başarısız Data");
 		}
-		SummonerDto returnBody = leagueOfLegendsService.getSummoners(client.getUsername());
+		SummonerDTO returnBody = leagueOfLegendsService.getSummoners(client.getUsername());
 		if(returnBody==null) {
 			return new Response("Error","Başarısız Data");
 		}
