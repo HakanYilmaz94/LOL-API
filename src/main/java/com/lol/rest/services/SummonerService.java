@@ -5,17 +5,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.lol.dto.SummonerDTO;
+import com.lol.interfaces.ICommonService;
+import com.lol.interfaces.ISummonerService;
 import com.lol.util.LolConstants;
 
 @Service
-public class SummonerService {
+public class SummonerService implements ISummonerService {
 
 	@Value("${lol.api.key}")
 	private String apiKey;
 
 	@Autowired
-	CommonService commonService;
+	ICommonService commonService;
 
+	@Override
 	public SummonerDTO getSummonerInfo(String username) {
 
 		String request = LolConstants.SUMMONERS_API + username + "?api_key=" + apiKey;
