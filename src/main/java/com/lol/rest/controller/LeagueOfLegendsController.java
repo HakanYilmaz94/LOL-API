@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lol.dto.CurrentGameInfoDTO;
 import com.lol.dto.SummonerDTO;
-import com.lol.rest.services.SpectatorService;
-import com.lol.rest.services.SummonerService;
+import com.lol.interfaces.ISpectatorService;
+import com.lol.interfaces.ISummonerService;
 import com.lol.vo.ClientVO;
 
 @RestController
@@ -17,17 +17,17 @@ import com.lol.vo.ClientVO;
 public class LeagueOfLegendsController {
 
 	@Autowired
-	SummonerService leagueOfLegendsService;
+	ISummonerService summonerService;
 
 	@Autowired
-	SpectatorService spectatorService;
+	ISpectatorService spectatorService;
 
 	@PostMapping(path = "getSummonersInfo")
 	public Response getSummonersInfo(@RequestBody ClientVO client) {
 		if (client.getUsername() == null) {
 			return new Response("Error", "client.getUsername() is null");
 		}
-		SummonerDTO SummonerDTO = leagueOfLegendsService.getSummonerInfo(client.getUsername());
+		SummonerDTO SummonerDTO = summonerService.getSummonerInfo(client.getUsername());
 		if (SummonerDTO == null) {
 			return new Response("Error", "SummonerDTO is null");
 		}

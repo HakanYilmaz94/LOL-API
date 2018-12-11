@@ -1,4 +1,4 @@
-package com.lol.dto.common;
+package com.lol.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +9,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class BannedChampion {
-
-	private int pickTurn;
-	private long championId;
-	private long teamId;
+public class GameCustomizationObjectDTO {
+	private String category;
+	private String content;
 }

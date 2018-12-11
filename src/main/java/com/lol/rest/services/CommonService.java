@@ -8,13 +8,15 @@ import java.net.URL;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
+import com.lol.interfaces.ICommonService;
 
 import lombok.extern.log4j.Log4j2;
 
 @Service
 @Log4j2
-public class CommonService {
+public class CommonService implements ICommonService {
 
+	@Override
 	public Object getResponse(String request, Class<?> classType) {
 		StringBuffer response = null;
 		try {
@@ -42,4 +44,5 @@ public class CommonService {
 		return responseObject;
 
 	}
+
 }

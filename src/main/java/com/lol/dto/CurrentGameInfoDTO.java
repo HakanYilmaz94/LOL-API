@@ -2,10 +2,6 @@ package com.lol.dto;
 
 import java.util.List;
 
-import com.lol.dto.common.BannedChampion;
-import com.lol.dto.common.CurrentGameParticipantDTO;
-import com.lol.dto.common.ObserverDTO;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,7 +25,7 @@ public class CurrentGameInfoDTO {
 	private String gameMode;
 	private long mapId;
 	private String gameType;
-	private List<BannedChampion> bannedChampions;
+	private List<BannedChampionDTO> bannedChampions;
 	private ObserverDTO observers;
 	private List<CurrentGameParticipantDTO> participants;
 	private long gameLength;

@@ -1,4 +1,4 @@
-package com.lol.dto.common;
+package com.lol.dto;
 
 import java.util.List;
 
