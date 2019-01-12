@@ -4,6 +4,10 @@ import com.lol.dto.SummonerDTO;
 
 public interface ISummonerService {
 
-	SummonerDTO getSummonerInfo(String username);
+	SummonerDTO getSummonerInfoByUsername(String username);
+
+	SummonerDTO getSummonerInfoBySummonerId(String summonerId);
+
+	SummonerDTO getSummonerInfoByAccountId(String accountId);
 
 }

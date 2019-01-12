@@ -27,7 +27,7 @@ public class LeagueOfLegendsController {
 		if (client.getUsername() == null) {
 			return new Response("Error", "client.getUsername() is null");
 		}
-		SummonerDTO SummonerDTO = summonerService.getSummonerInfo(client.getUsername());
+		SummonerDTO SummonerDTO = summonerService.getSummonerInfoByUsername(client.getUsername());
 		if (SummonerDTO == null) {
 			return new Response("Error", "SummonerDTO is null");
 		}

@@ -19,11 +19,27 @@ public class SummonerService implements ISummonerService {
 	ICommonService commonService;
 
 	@Override
-	public SummonerDTO getSummonerInfo(String username) {
+	public SummonerDTO getSummonerInfoByUsername(String username) {
 
-		String request = LolConstants.SUMMONERS_API + username + "?api_key=" + apiKey;
+		String request = LolConstants.SUMMONER_BY_SUMMENOR_NAME_API + username + "?api_key=" + apiKey;
 		SummonerDTO summoner = (SummonerDTO) commonService.getResponse(request, SummonerDTO.class);
 		return summoner;
 
 	}
+
+	@Override
+	public SummonerDTO getSummonerInfoByAccountId(String accountId) {
+		String request = LolConstants.SUMMONER_BY_ACCOUNT_ID_API + accountId + "?api_key=" + apiKey;
+		SummonerDTO summoner = (SummonerDTO) commonService.getResponse(request, SummonerDTO.class);
+		return summoner;
+
+	}
+
+	@Override
+	public SummonerDTO getSummonerInfoBySummonerId(String summonerId) {
+		String request = LolConstants.SUMMONER_BY_SUMMONER_ID_API + summonerId + "?api_key=" + apiKey;
+		SummonerDTO summoner = (SummonerDTO) commonService.getResponse(request, SummonerDTO.class);
+		return summoner;
+	}
+
 }
